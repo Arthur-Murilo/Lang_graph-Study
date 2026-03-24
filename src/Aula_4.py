@@ -90,4 +90,5 @@ if isinstance(llm_response, AIMessage) and getattr(llm_response, "tool_calls", N
     messages.append(llm_response)
 
 # 9 - Exibo o resultado (com ou sem tool_calls)
-print(messages[-1].content)
+# print(messages[-1].content)
+print(messages)
