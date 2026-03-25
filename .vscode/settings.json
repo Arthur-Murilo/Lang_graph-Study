@@ -1,0 +1,26 @@
+{
+    // 🐍 Python interpreter do projeto (MUITO IMPORTANTE)
+    "python.defaultInterpreterPath": "./.venv/bin/python",
+
+    // 🧠 IntelliSense e análise
+    "python.analysis.typeCheckingMode": "standard",
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.completeFunctionParens": true,
+    // 💡 Inlay hints (ótimo pra aprendizado e clareza)
+    "python.analysis.inlayHints.variableTypes": true,
+    "python.analysis.inlayHints.functionReturnTypes": true,
+    "python.analysis.inlayHints.parameterTypes": true,
+    // 🚨 Diagnósticos importantes
+    "python.analysis.reportMissingImports": true,
+    "python.analysis.reportUnknownVariableType": true,
+    // ⚡ Black como formatter
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true,
+        "diffEditor.ignoreTrimWhitespace": true
+    },
+    // 🧹 Organização automática
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit"
+    }
+}
