@@ -1,6 +1,7 @@
 {
     // 🐍 Python interpreter do projeto (MUITO IMPORTANTE)
     "python.defaultInterpreterPath": "./.venv/bin/python",
+    "python.languageServer": "Pylance",
 
     // 🧠 IntelliSense e análise
     "python.analysis.typeCheckingMode": "standard",
@@ -15,7 +16,7 @@
     "python.analysis.reportUnknownVariableType": true,
     // ⚡ Black como formatter
     "[python]": {
-        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.defaultFormatter": "charliermarsh.ruff",
         "editor.formatOnSave": true,
         "diffEditor.ignoreTrimWhitespace": true
     },
