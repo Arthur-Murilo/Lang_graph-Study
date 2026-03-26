@@ -1,4 +1,5 @@
-from langchain.chat_models import init_chat_model
+from dotenv import load_dotenv
+from langchain.chat_models import BaseChatModel, init_chat_model
 from langchain.tools import BaseTool, tool
 from langchain_core.messages import (
     AIMessage,
@@ -9,7 +10,6 @@ from langchain_core.messages import (
 )
 from pydantic import ValidationError
 from rich import print
-from dotenv import load_dotenv
 
 load_dotenv()
 # 1 - Criar as ferramentas
@@ -32,7 +32,7 @@ def multiply(a: float, b: float) -> float:
 # 2 - Instanciamos nosso modelo.
 
 # llm = init_chat_model("google_genai:gemini-2.5-flash")
-llm = init_chat_model("groq:openai/gpt-oss-120b")
+llm: BaseChatModel = init_chat_model("groq:openai/gpt-oss-120b")
 
 # 3 - Criamos as mensagens
 
@@ -50,7 +50,7 @@ messages: list[BaseMessage] = [system_message, human_message]
 # 4 - Criamos a lista de ferramentas
 tools: list[BaseTool] = [multiply]
 # Isso ajuda a encontrar a ferramenta por nome
-tools_by_name = {tool.name: tool for tool in tools}
+tools_by_name: dict[str, BaseTool] = {tool.name: tool for tool in tools}
 
 # 5 - Criamos um LLM com base no anterior, mas com acesso a tools.
 llm_with_tools = llm.bind_tools(tools)
